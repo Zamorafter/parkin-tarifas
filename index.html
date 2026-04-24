@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifario Parking Tolón</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="carousel-container">
+        <!-- SLIDE 1: TARIFAS BS -->
+        <div class="slide active" id="slide-bs">
+            <header class="top-header">
+                <div class="logo-area">
+                    <div class="logo"><span class="text-orange">p</span>arking <br><span class="logo-subtitle">tolón</span></div>
+                    <div class="date-valor">Fecha Valor: <span id="fecha-valor-bs">Cargando...</span></div>
+                </div>
+                <div class="title-area">
+                    <div class="providencia">Según Providencia Administrativa N°056/2014</div>
+                    <h1 class="main-title">TARIFARIO</h1>
+                    <div class="tipo-estacionamiento">ESTACIONAMIENTO TIPO: ESTRUCTURAL NO MECÁNICO</div>
+                </div>
+            </header>
+
+            <main class="content-grid">
+                <div class="left-panel">
+                    <div class="bcv-widget">
+                        <div class="bcv-logo">
+                            <div class="bcv-circle">BCV</div>
+                        </div>
+                        <div class="bcv-rate">
+                            <div class="bcv-label">Bs/USD</div>
+                            <div class="bcv-value" id="bcv-rate-bs">---</div>
+                        </div>
+                    </div>
+                    
+                    <p class="igtf-text">
+                        En caso de pagar en divisas, será calculado el 3% por<br>
+                        IMPUESTOS A LAS GRANDES TRANSACCIONES FINANCIERAS<br>
+                        (IGTF) por parte de sujetos pasivos especiales (SPE) Providencia<br>
+                        administrativa SNAT/2022/000013.
+                    </p>
+
+                    <h2 class="horarios-title">HORARIOS</h2>
+                    
+                    <div class="horario-block">
+                        <h3>TARIFA PLANA y SERVICIO VIP:</h3>
+                        <p>Lunes a sábado: 10:00 a.m. hasta las 08:00 p.m.</p>
+                        <p>Domingos y feriados: 11:00 a.m. hasta las 07:00 p.m.</p>
+                    </div>
+
+                    <div class="horario-block pernocta">
+                        <h3 class="text-orange">PERNOCTA:</h3>
+                        <p>Aplica de lunes a domingo: 12:01 a.m. hasta las 05:59 a.m.</p>
+                    </div>
+                </div>
+
+                <div class="right-panel">
+                    <!-- TARIFA PLANA DIARIA -->
+                    <div class="tarifa-row">
+                        <div class="tarifa-name text-orange">TARIFA PLANA<br>DIARIA</div>
+                        <div class="tarifa-boxes">
+                            <div class="box">
+                                <span class="box-label">Bs.</span>
+                                <span class="box-value" id="tp-base">---</span>
+                            </div>
+                            <div class="box">
+                                <span class="box-label">+ IVA Bs.</span>
+                                <span class="box-value" id="tp-iva">---</span>
+                            </div>
+                            <div class="box">
+                                <span class="box-label">= Bs.</span>
+                                <span class="box-value" id="tp-total">---</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SERVICIO VIP -->
+                    <div class="tarifa-row">
+                        <div class="tarifa-name text-yellow">SERVICIO<br>VIP</div>
+                        <div class="tarifa-boxes">
+                            <div class="box">
+                                <span class="box-label">Bs.</span>
+                                <span class="box-value" id="vip-base">---</span>
+                            </div>
+                            <div class="box">
+                                <span class="box-label">+ IVA Bs.</span>
+                                <span class="box-value" id="vip-iva">---</span>
+                            </div>
+                            <div class="box">
+                                <span class="box-label">= Bs.</span>
+                                <span class="box-value" id="vip-total">---</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TICKET PERDIDO -->
+                    <div class="tarifa-row">
+                        <div class="tarifa-name text-yellow">TICKET<br>PERDIDO</div>
+                        <div class="tarifa-boxes">
+                            <div class="box">
+                                <span class="box-label">Bs.</span>
+                                <span class="box-value" id="tk-base">---</span>
+                            </div>
+                            <div class="box">
+                                <span class="box-label">+ IVA Bs.</span>
+                                <span class="box-value" id="tk-iva">---</span>
+                            </div>
+                            <div class="box">
+                                <span class="box-label">= Bs.</span>
+                                <span class="box-value" id="tk-total">---</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="bottom-footer">
+                En este establecimiento su vehículo cuenta con póliza de seguros de responsabilidad civil general con cobertura garajista
+            </footer>
+        </div>
+
+        <!-- SLIDE 2: TARIFAS REF -->
+        <div class="slide" id="slide-ref">
+            <header class="top-header">
+                <div class="logo-area">
+                    <div class="logo"><span class="text-orange">p</span>arking <br><span class="logo-subtitle">tolón</span></div>
+                    <div class="date-valor">Fecha Valor: <span id="fecha-valor-ref">Cargando...</span></div>
+                </div>
+                <div class="title-area">
+                    <div class="providencia">Según Providencia Administrativa N°056/2014</div>
+                    <h1 class="main-title">TARIFARIO</h1>
+                    <div class="tipo-estacionamiento">ESTACIONAMIENTO TIPO: ESTRUCTURAL NO MECÁNICO</div>
+                </div>
+            </header>
+
+            <main class="content-grid">
+                <div class="left-panel">
+                    <div class="bcv-widget">
+                        <div class="bcv-logo">
+                            <div class="bcv-circle">BCV</div>
+                        </div>
+                        <div class="bcv-rate">
+                            <div class="bcv-label">Bs/USD</div>
+                            <div class="bcv-value" id="bcv-rate-ref">---</div>
+                        </div>
+                    </div>
+                    
+                    <p class="igtf-text">
+                        En caso de pagar en divisas, será calculado el 3% por<br>
+                        IMPUESTOS A LAS GRANDES TRANSACCIONES FINANCIERAS<br>
+                        (IGTF) por parte de sujetos pasivos especiales (SPE) Providencia<br>
+                        administrativa SNAT/2022/000013.
+                    </p>
+
+                    <h2 class="horarios-title">HORARIOS</h2>
+                    
+                    <div class="horario-block">
+                        <h3>TARIFA PLANA y SERVICIO VIP:</h3>
+                        <p>Lunes a sábado: 10:00 a.m. hasta las 08:00 p.m.</p>
+                        <p>Domingos y feriados: 11:00 a.m. hasta las 07:00 p.m.</p>
+                    </div>
+
+                    <div class="horario-block pernocta">
+                        <h3 class="text-orange">PERNOCTA:</h3>
+                        <p>Aplica de lunes a domingo: 12:01 a.m. hasta las 05:59 a.m.</p>
+                    </div>
+                </div>
+
+                <div class="right-panel">
+                    <!-- TARIFA PLANA DIARIA -->
+                    <div class="tarifa-row">
+                        <div class="tarifa-name text-orange">TARIFA PLANA<br>DIARIA</div>
+                        <div class="tarifa-boxes ref-boxes">
+                            <div class="box single-box">
+                                <span class="box-value">Ref. 3,97</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SERVICIO VIP -->
+                    <div class="tarifa-row">
+                        <div class="tarifa-name text-yellow">SERVICIO<br>VIP</div>
+                        <div class="tarifa-boxes ref-boxes">
+                            <div class="box single-box">
+                                <span class="box-value">Ref. 10</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TICKET PERDIDO -->
+                    <div class="tarifa-row">
+                        <div class="tarifa-name text-yellow">TICKET<br>PERDIDO</div>
+                        <div class="tarifa-boxes ref-boxes">
+                            <div class="box single-box">
+                                <span class="box-value">Ref. 8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="bottom-footer">
+                En este establecimiento su vehículo cuenta con póliza de seguros de responsabilidad civil general con cobertura garajista
+            </footer>
+        </div>
+
+        <!-- SLIDE 3: SUNDDE -->
+        <div class="slide sundde-slide" id="slide-sundde">
+            <div class="sundde-container">
+                <div class="sundde-logos">
+                    <!-- Text representation for SUNDDE -->
+                    <div class="sundde-logo">
+                        <span style="color: #0b2240; font-size: 2rem; font-weight: 800; display: flex; align-items: center;">
+                            <span style="color: #ff0000; font-size: 2.5rem; margin-right: 5px;">★</span>
+                            SUNDDE
+                        </span>
+                    </div>
+                    <div class="bcv-logo-dark">
+                        <div class="bcv-circle dark-circle">BCV</div>
+                    </div>
+                </div>
+
+                <p class="sundde-quote">
+                    "Quienes omitan la colocación de avisos o carteles habladores<br>
+                    que exijan en materia de administración cambiaria, estarán<br>
+                    incurriendo en infracciones por Incumplimiento de<br>
+                    Formalidades establecidas en el Artículo 46 numeral 5 de la LEY<br>
+                    ORGÁNICA DE PRECIOS JUSTOS"
+                </p>
+
+                <div class="sundde-data">
+                    <div class="qr-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Denuncia" alt="QR Denuncia">
+                        <div class="qr-text">ESCANEA<br>Y DENUNCIA AQUÍ</div>
+                    </div>
+                    <div class="rates-table">
+                        <div class="rate-row">
+                            <div class="rate-label">Bs. / USD</div>
+                            <div class="rate-value" id="sundde-usd">---</div>
+                        </div>
+                        <div class="rate-row">
+                            <div class="rate-label">Bs. / EUR</div>
+                            <div class="rate-value" id="sundde-eur">---</div>
+                        </div>
+                        <div class="rate-row">
+                            <div class="rate-label">Fecha</div>
+                            <div class="rate-value date-value" id="sundde-fecha">---</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sundde-footer">
+                <div class="sundde-footer-text">¡DEFIENDE TUS DERECHOS!</div>
+                <div class="flag-curve">
+                    <div class="curve-yellow"></div>
+                    <div class="curve-blue">
+                        <span class="stars">★★★★★★★★</span>
+                    </div>
+                    <div class="curve-red"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

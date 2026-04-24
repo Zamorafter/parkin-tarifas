@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1c1c1c;
+    color: white;
+    overflow: hidden; /* Evita barras de desplazamiento */
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Carrusel Container */
+#carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Typography and Colors */
+.text-orange { color: #f58220; }
+.text-yellow { color: #ffc107; }
+
+/* Layout Grid for Slide 1 and 2 */
+.content-grid {
+    display: flex;
+    flex: 1;
+    padding: 0 40px;
+    position: relative;
+}
+
+.left-panel {
+    flex: 1;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-panel {
+    flex: 1.2;
+    background-color: #242424; /* Ligeramente más claro para separar visualmente */
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Header */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    align-items: center;
+    background-color: #000;
+}
+
+.logo-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.logo-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    padding-left: 2px;
+}
+
+.date-valor {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.title-area {
+    text-align: right;
+}
+
+.providencia {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin: 0;
+    line-height: 1;
+}
+
+.tipo-estacionamiento {
+    font-size: 0.9rem;
+    color: #ccc;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+/* Left Panel Elements */
+.bcv-widget {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 10px 30px 10px 10px;
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+.bcv-circle {
+    background-color: #d1d1d1;
+    color: #333;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.8rem;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 2px #ccc;
+}
+
+.bcv-rate {
+    margin-left: 20px;
+    color: #000;
+}
+
+.bcv-label {
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.bcv-value {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.igtf-text {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #bbb;
+    margin-bottom: 30px;
+}
+
+.horarios-title {
+    color: #ffc107;
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.horario-block {
+    margin-bottom: 20px;
+}
+
+.horario-block h3 {
+    color: #ffc107;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.horario-block p {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    font-weight: 600;
+}
+
+/* Right Panel Elements */
+.tarifa-row {
+    display: flex;
+    align-items: center;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.tarifa-name {
+    flex: 1;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-align: right;
+    padding-right: 30px;
+}
+
+.tarifa-boxes {
+    flex: 2;
+    display: flex;
+    gap: 15px;
+}
+
+.box {
+    background-color: #fff;
+    color: #000;
+    border-radius: 15px;
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-label {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.box-value {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.ref-boxes {
+    justify-content: flex-start;
+}
+
+.single-box {
+    flex: 0 0 200px;
+}
+
+.single-box .box-value {
+    font-size: 2rem;
+}
+
+/* Footer */
+.bottom-footer {
+    background-color: #ffc107;
+    color: #000;
+    text-align: center;
+    padding: 15px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: auto;
+}
+
+/* Diagonals/Separators */
+.content-grid::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    bottom: -50px;
+    left: 45%;
+    width: 40px;
+    background-color: #000;
+    transform: rotate(15deg);
+    z-index: -1;
+}
+
+
+/* --- SLIDE SUNDDE --- */
+.sundde-slide {
+    background-color: #fff;
+    color: #000;
+}
+
+.sundde-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+.sundde-logos {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-bottom: 40px;
+}
+
+.bcv-logo-dark .dark-circle {
+    background-color: #fff;
+    border-color: #0b2240;
+    color: #0b2240;
+    box-shadow: none;
+}
+
+.sundde-quote {
+    color: #0b2240;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.5;
+    width: 60%;
+    margin-bottom: 50px;
+}
+
+.sundde-data {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.qr-container {
+    text-align: center;
+}
+
+.qr-container img {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #0b2240;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.qr-text {
+    color: #0b2240;
+    font-weight: 800;
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.rates-table {
+    border: 2px solid #0b2240;
+    border-radius: 5px;
+}
+
+.rate-row {
+    display: flex;
+    border-bottom: 2px solid #0b2240;
+}
+
+.rate-row:last-child {
+    border-bottom: none;
+}
+
+.rate-label {
+    padding: 15px 20px;
+    font-weight: 800;
+    color: #0b2240;
+    font-size: 1.2rem;
+    border-right: 2px solid #0b2240;
+    width: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.rate-value {
+    padding: 15px 20px;
+    font-weight: 900;
+    font-size: 2rem;
+    width: 250px;
+    text-align: right;
+}
+
+.date-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.sundde-footer {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+    margin-top: auto;
+}
+
+.sundde-footer-text {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    color: #0b2240;
+    font-size: 2rem;
+    font-weight: 900;
+    z-index: 10;
+}
+
+.flag-curve {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.curve-yellow { flex: 2; background-color: #ffc107; border-radius: 50% 50% 0 0 / 100% 100% 0 0; transform: scaleX(1.2); }
+.curve-blue { flex: 1; background-color: #002395; display: flex; justify-content: center; align-items: center; color: white; transform: scaleX(1.2); }
+.curve-red { flex: 1; background-color: #ce1126; transform: scaleX(1.2); }
+.stars { letter-spacing: 5px; font-size: 1.2rem; }
