@@ -127,8 +127,8 @@ function checkAutoReload() {
 function init() {
     fetchData();
     
-    // Cambiar slide cada 12 segundos
-    setInterval(nextSlide, 12000);
+    // Cambiar slide cada 5 segundos
+    setInterval(nextSlide, 5000);
     
     // Chequear recarga diaria cada 1 minuto (60000 ms)
     setInterval(checkAutoReload, 60000);
