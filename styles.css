@@ -284,8 +284,8 @@ body {
 .content-grid::before {
     content: '';
     position: absolute;
-    top: -50px;
-    bottom: -50px;
+    top: -100px; /* Mayor margen para evitar ruido visual en los bordes */
+    bottom: -100px;
     left: 45%;
     width: 40px;
     background-color: #000;
@@ -330,13 +330,13 @@ body {
 }
 
 .sundde-logo img {
-    height: calc(8vh);
+    height: calc(11vh); /* Logos más grandes */
     width: auto;
     object-fit: contain;
 }
 
 .bcv-logo-dark img {
-    height: calc(8vh);
+    height: calc(11vh); /* Logos más grandes */
     width: auto;
     object-fit: contain;
 }
@@ -443,10 +443,7 @@ body {
 }
 
 .sundde-footer-img img {
-    width: 100%;
-    height: auto;
-    max-height: 25vh; /* Límite para no quitar mucho espacio al contenido superior */
-    object-fit: contain; /* Muestra la imagen completa sin recortar */
-    object-position: center bottom;
+    width: 100%; /* Forzar a que toque los bordes laterales */
+    height: auto; /* Mantener proporción sin deformar */
     display: block;
 }
