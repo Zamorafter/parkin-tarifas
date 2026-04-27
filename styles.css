@@ -411,7 +411,7 @@ body {
 .sundde-footer-img img {
     width: 100%;
     height: auto;
-    max-height: 25vh;
+    max-height: 30vh;
     object-fit: contain;
     object-position: center bottom;
     display: block;
