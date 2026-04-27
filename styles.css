@@ -91,22 +91,22 @@ body {
 }
 
 .logo {
-    font-size: 2.2rem;
+    font-size: 3rem; /* Logo más grande */
     font-weight: 900;
     line-height: 1;
     letter-spacing: -1px;
 }
 
 .logo-subtitle {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-weight: 400;
     letter-spacing: 2px;
     padding-left: 2px;
 }
 
 .date-valor {
-    margin-top: 5px;
-    font-size: 0.85rem;
+    margin-top: 10px;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 
@@ -115,24 +115,24 @@ body {
 }
 
 .providencia {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     color: #aaa;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
 }
 
 .main-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: 5px;
+    font-size: 4rem; /* Título masivo */
+    font-weight: 900;
+    letter-spacing: 8px;
     margin: 0;
     line-height: 1;
 }
 
 .tipo-estacionamiento {
-    font-size: 0.75rem;
+    font-size: 1rem;
     color: #ccc;
-    letter-spacing: 1px;
-    margin-top: 3px;
+    letter-spacing: 1.5px;
+    margin-top: 8px;
 }
 
 /* Left Panel Elements */
@@ -167,45 +167,45 @@ body {
 }
 
 .bcv-label {
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 700;
     text-align: center;
 }
 
 .bcv-value {
-    font-size: 2rem;
+    font-size: 3.2rem; /* Valor BCV más grande */
     font-weight: 900;
     line-height: 1;
 }
 
 .igtf-text {
-    font-size: 0.75rem;
-    line-height: 1.3;
+    font-size: 0.95rem;
+    line-height: 1.4;
     color: #bbb;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .horarios-title {
     color: #ffc107;
-    font-size: 2.2rem;
+    font-size: 3rem; /* Horarios más grande */
     font-weight: 900;
     letter-spacing: 3px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .horario-block {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .horario-block h3 {
     color: #ffc107;
-    font-size: 1rem;
-    margin-bottom: 3px;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
 }
 
 .horario-block p {
-    font-size: 0.85rem;
-    margin-bottom: 2px;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
     font-weight: 600;
 }
 
@@ -220,11 +220,11 @@ body {
 
 .tarifa-name {
     flex: 1;
-    font-size: 1.5rem;
+    font-size: 2.2rem; /* Nombres de tarifa más grandes */
     font-weight: 900;
     line-height: 1.1;
     text-align: right;
-    padding-right: 20px;
+    padding-right: 30px;
 }
 
 .tarifa-boxes {
@@ -246,14 +246,14 @@ body {
 }
 
 .box-label {
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 800;
     color: #555;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
 }
 
 .box-value {
-    font-size: 1.2rem;
+    font-size: 1.8rem; /* Valores de tarifa más grandes */
     font-weight: 900;
 }
 
@@ -274,9 +274,9 @@ body {
     background-color: #ffc107;
     color: #000;
     text-align: center;
-    padding: 15px;
-    font-weight: 700;
-    font-size: 1.1rem;
+    padding: 25px; /* Más padding para llenar el fondo */
+    font-weight: 800;
+    font-size: 1.6rem; /* Texto más grande */
     margin-top: auto;
 }
 
