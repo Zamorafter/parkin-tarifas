@@ -297,19 +297,27 @@ body {
 }
 
 .sundde-container {
-    flex: 1; /* Toma el espacio restante superior */
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around; /* Espaciado más compacto para dar más espacio al banner */
-    padding: 15px 40px;
+    justify-content: center;
+    padding: 20px 60px;
+    gap: 25px;
 }
 
 .sundde-logos {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 85%; /* Separa los logos hacia los bordes */
+    width: 100%;
+    padding: 0 40px;
+}
+
+.sundde-logos img {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
 }
 
 .sundde-quote {
@@ -393,16 +401,18 @@ body {
 /* El contenedor de la imagen inferior */
 .sundde-footer-img {
     width: 100%;
-    line-height: 0; /* Elimina cualquier margen fantasma debajo de la imagen */
+    line-height: 0;
     margin: 0;
     padding: 0;
     flex-shrink: 0;
+    margin-top: auto;
 }
 
 .sundde-footer-img img {
     width: 100%;
-    height: 28vh; /* Altura fija para que el banner sea bien visible */
-    object-fit: cover;
-    object-position: center top; /* Muestra la parte superior de la imagen donde está el texto */
+    height: auto;
+    max-height: 25vh;
+    object-fit: contain;
+    object-position: center bottom;
     display: block;
 }
