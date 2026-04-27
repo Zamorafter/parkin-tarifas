@@ -406,5 +406,5 @@ body {
     object-fit: contain;
     object-position: center bottom;
     display: block;
-    margin-top: -20px; /* Sube la imagen 20px - ajusta este valor */
+    margin-top: -50px; /* Sube la imagen 20px - ajusta este valor */
 }
