@@ -8,7 +8,8 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: #1c1c1c;
     color: white;
-    overflow: hidden; /* Evita barras de desplazamiento */
+    overflow: hidden;
+    /* Evita barras de desplazamiento */
     width: 100vw;
     height: 100vh;
 }
@@ -39,8 +40,13 @@ body {
 }
 
 /* Typography and Colors */
-.text-orange { color: #f58220; }
-.text-yellow { color: #ffc107; }
+.text-orange {
+    color: #f58220;
+}
+
+.text-yellow {
+    color: #ffc107;
+}
 
 /* Layout Grid for Slide 1 and 2 */
 .content-grid {
@@ -60,7 +66,8 @@ body {
 
 .right-panel {
     flex: 1.2;
-    background-color: #242424; /* Ligeramente más claro para separar visualmente */
+    background-color: #242424;
+    /* Ligeramente más claro para separar visualmente */
     padding: 30px;
     border-radius: 15px;
     display: flex;
@@ -288,12 +295,17 @@ body {
 
 
 /* --- SLIDE SUNDDE --- */
+/* Proporciones matemáticas basadas en viewport (100vh = alto total pantalla) */
+/* Logos superiores: 8vh | Cita: ~12vh | Data (QR+Tasas): ~30vh | Footer: 18vh */
+
 .sundde-slide {
     background-color: #fff;
     color: #000;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribuye para que el banner quede abajo */
+    justify-content: space-between;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .sundde-container {
@@ -302,62 +314,80 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px 60px;
-    gap: 25px;
+    /* Padding proporcional: 3vh arriba, 2vh abajo, 8vw lados */
+    padding: calc(3vh) calc(8vw) calc(2vh);
+    gap: calc(3vh);
 }
 
+/* === LOGOS SUPERIORES === */
+/* SUNDDE: 8vh de alto | BCV: 8vh de alto | Separación: 70% del ancho */
 .sundde-logos {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 40px;
+    padding: 0 calc(5vw);
 }
 
-.sundde-logos img {
-    height: 100px;
+.sundde-logo img {
+    height: calc(8vh);
     width: auto;
     object-fit: contain;
 }
 
-.sundde-quote {
-    color: #0b2240;
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-align: center;
-    line-height: 1.4;
-    width: 80%;
+.bcv-logo-dark img {
+    height: calc(8vh);
+    width: auto;
+    object-fit: contain;
 }
 
+/* === CITA TEXTUAL === */
+/* Ancho: 65% del contenedor | Tipografía: 1.1rem bold | Color: #0b2240 */
+.sundde-quote {
+    color: #0b2240;
+    font-size: clamp(0.85rem, calc(0.6rem + 0.5vw), 1.2rem);
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.5;
+    width: 65%;
+    max-width: 700px;
+}
+
+/* === SECCIÓN DE DATOS (QR + TABLA TASAS) === */
+/* QR: 22vh x 22vh | Tabla: auto | Gap entre ambos: 5vw */
 .sundde-data {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: calc(5vw);
 }
 
 .qr-container {
     text-align: center;
 }
 
+/* QR: cuadrado proporcional al viewport */
 .qr-container img {
-    width: 180px; /* Un poco más grande para llenar espacio */
-    height: 180px;
+    width: calc(22vh);
+    height: calc(22vh);
     border: 2px solid #0b2240;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: calc(1vh);
+    padding: calc(1.2vh);
+    object-fit: contain;
 }
 
 .qr-text {
     color: #0b2240;
     font-weight: 800;
-    margin-top: 10px;
-    font-size: 1.1rem;
+    margin-top: calc(1vh);
+    font-size: clamp(0.9rem, calc(0.7rem + 0.4vw), 1.2rem);
 }
 
+/* === TABLA DE TASAS BCV === */
+/* Borde: 3px sólido #0b2240 | Celdas label: 12vw | Celdas valor: 18vw */
 .rates-table {
     border: 3px solid #0b2240;
-    border-radius: 8px;
+    border-radius: calc(0.8vh);
     background: #fff;
 }
 
@@ -370,27 +400,33 @@ body {
     border-bottom: none;
 }
 
+/* Labels: Bs./USD, Bs./EUR, Fecha */
 .rate-label {
-    padding: 15px 20px;
+    padding: calc(1.5vh) calc(1.5vw);
     font-weight: 800;
     color: #0b2240;
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, calc(0.7rem + 0.4vw), 1.3rem);
     border-right: 2px solid #0b2240;
-    width: 140px;
+    width: calc(10vw);
+    min-width: 100px;
     display: flex;
     align-items: center;
 }
 
+/* Valores: tasas numéricas grandes */
 .rate-value {
-    padding: 15px 20px;
+    padding: calc(1.5vh) calc(1.5vw);
     font-weight: 900;
-    font-size: 1.8rem;
-    width: 240px;
+    font-size: clamp(1.4rem, calc(1rem + 1vw), 2.2rem);
+    width: calc(18vw);
+    min-width: 180px;
     text-align: right;
+    color: #000;
 }
 
+/* Fecha: tipografía más pequeña, centrada */
 .date-value {
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, calc(0.7rem + 0.4vw), 1.2rem);
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -398,23 +434,23 @@ body {
     text-align: center;
 }
 
-/* El contenedor de la imagen inferior */
+/* === BANNER INFERIOR (footer.jpeg) === */
+/* Altura: 18vh del viewport | Ancho: 100% | object-fit: cover para llenar */
 .sundde-footer-img {
     width: 100%;
+    height: calc(18vh);
+    flex-shrink: 0;
     line-height: 0;
     margin: 0;
     padding: 0;
     flex-shrink: 0;
-    margin-top: -50px; /* Cambia auto por un valor negativo */
-    position: relative;
-    z-index: 2;
+    margin-top: auto;
 }
 
 .sundde-footer-img img {
     width: 100%;
-    height: auto;
-    max-height: 30vh;
-    object-fit: contain;
-    object-position: center bottom;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
     display: block;
 }
