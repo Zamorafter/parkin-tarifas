@@ -420,14 +420,14 @@ body {
     font-size: clamp(1.4rem, calc(1rem + 1vw), 2.2rem);
     width: calc(18vw);
     min-width: 180px;
-    text-align: right;
+    text-align: center; /* Centrar números */
     color: #000;
 }
 
 /* Fecha: tipografía más pequeña, centrada */
 .date-value {
     font-size: clamp(0.9rem, calc(0.7rem + 0.4vw), 1.2rem);
-    font-weight: 700;
+    font-weight: 900; /* Negrita más fuerte */
     display: flex;
     align-items: center;
     justify-content: center;
