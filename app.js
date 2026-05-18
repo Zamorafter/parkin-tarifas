@@ -13,34 +13,37 @@ function formatCurrency(number) {
     return number.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
-// Fecha del día en Venezuela (cambia cada día calendario, aunque el BCV no publique tasa)
-function getFechaValorHoy() {
-    const [year, month, day] = new Intl.DateTimeFormat('en-CA', {
-        timeZone: 'America/Caracas',
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit'
-    }).format(new Date()).split('-');
-    return new Date(Number(year), Number(month) - 1, Number(day));
+const FECHA_TZ = 'America/Caracas';
+const fmtFechaValor = new Intl.DateTimeFormat('es-VE', {
+    timeZone: FECHA_TZ,
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+});
+const fmtFechaSundde = new Intl.DateTimeFormat('es-VE', {
+    timeZone: FECHA_TZ,
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+});
+
+function capitalizar(texto) {
+    return texto.charAt(0).toUpperCase() + texto.slice(1);
 }
 
-// Utilidad para formatear fechas (ej. Lunes, 18 de Mayo de 2026)
-function formatDate(dateInput) {
-    const date = dateInput instanceof Date ? dateInput : new Date(dateInput);
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    let formatted = date.toLocaleDateString('es-VE', options);
-    return formatted.charAt(0).toUpperCase() + formatted.slice(1);
-}
+// Fecha del día en Venezuela (no depende de fechaActualizacion del BCV ni del reloj local del TV)
+function updateFechaDisplay() {
+    const ahora = new Date();
+    const formattedDate = capitalizar(fmtFechaValor.format(ahora));
 
-function updateFechaDisplay(fecha) {
-    const formattedDate = formatDate(fecha);
     document.getElementById('fecha-valor-bs').innerText = formattedDate;
     document.getElementById('fecha-valor-ref').innerText = formattedDate;
 
-    const optionsSundde = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
-    let fSundde = fecha.toLocaleDateString('es-VE', optionsSundde);
+    let fSundde = capitalizar(fmtFechaSundde.format(ahora));
     document.getElementById('sundde-fecha').innerHTML =
-        fSundde.charAt(0).toUpperCase() + fSundde.slice(1).replace(/ de /g, ' de<br>');
+        fSundde.replace(/ de /g, ' de<br>');
 }
 
 // Realiza los cálculos según fórmula contable del usuario
@@ -81,7 +84,7 @@ function updateUI(dataUSD, dataEUR) {
     const tasaUSD = dataUSD.promedio;
     const tasaEUR = dataEUR.promedio;
 
-    updateFechaDisplay(getFechaValorHoy());
+    updateFechaDisplay();
 
     // Actualizar Tasas BCV UI
     const strTasaUSD = formatCurrency(tasaUSD);
@@ -124,12 +127,25 @@ function nextSlide() {
 // Lógica de Integridad para Sistema Permanente
 // Verifica la hora cada minuto. Si son las 06:05 am, recarga toda la página.
 // Esto libera la memoria RAM del navegador (memory leaks) y obtiene las tasas nuevas limpiamente.
-function checkAutoReload() {
-    updateFechaDisplay(getFechaValorHoy());
+function getHoraCaracas() {
+    const parts = new Intl.DateTimeFormat('en-GB', {
+        timeZone: FECHA_TZ,
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: false
+    }).formatToParts(new Date());
+    return {
+        hours: Number(parts.find((p) => p.type === 'hour').value),
+        minutes: Number(parts.find((p) => p.type === 'minute').value)
+    };
+}
 
-    const now = new Date();
-    // 6:05 AM (damos 5 minutos para que la API del BCV actualice su data)
-    if (now.getHours() === 6 && now.getMinutes() === 5) {
+function checkAutoReload() {
+    updateFechaDisplay();
+
+    const { hours, minutes } = getHoraCaracas();
+    // 6:05 AM Venezuela (damos 5 min para que la API del BCV actualice)
+    if (hours === 6 && minutes === 5) {
         console.log("Realizando recarga diaria de integridad...");
         window.location.reload(true);
     }
@@ -137,12 +153,11 @@ function checkAutoReload() {
 
 // Inicialización
 function init() {
+    updateFechaDisplay();
+
     fetchData();
-    
-    // Cambiar slide cada 5 segundos
+
     setInterval(nextSlide, 5000);
-    
-    // Chequear recarga diaria cada 1 minuto (60000 ms)
     setInterval(checkAutoReload, 60000);
 }
 
