@@ -3,7 +3,7 @@ const API_EUR = 'https://ve.dolarapi.com/v1/euros/oficial';
 
 // Tarifas fijas en USD
 const TARIFAS_USD = {
-    plana: 3.97,
+    plana: 4.97,
     vip: 10,
     perdido: 8
 };
